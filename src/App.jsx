@@ -39,14 +39,15 @@ export default function App() {
           transform: "translate(-50%, -50%)",
         }}
       >
-        <img
-          key={effectKey}
-          src="/monitoring-hat.png"
-          alt="Black dad hat embroidered with Monitoring the Situation"
-          className={`max-h-[min(40vh,360px)] w-auto select-none object-contain ${
-            effectKey > 0 ? "hat-mental" : ""
-          }`}
-        />
+        <div key={effectKey} className={effectKey > 0 ? "hat-spin" : ""}>
+          <img
+            src="/monitoring-hat.png"
+            alt="Black dad hat embroidered with Monitoring the Situation"
+            className={`max-h-[min(40vh,360px)] w-auto select-none object-contain ${
+              effectKey > 0 ? "hat-mental" : ""
+            }`}
+          />
+        </div>
       </div>
     </main>
   );
