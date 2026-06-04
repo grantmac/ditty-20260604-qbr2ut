@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function App() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [spinKey, setSpinKey] = useState(0);
+  const [effectKey, setEffectKey] = useState(0);
 
   useEffect(() => {
     const center = {
@@ -17,7 +17,7 @@ export default function App() {
     };
 
     const handleClick = () => {
-      setSpinKey((key) => key + 1);
+      setEffectKey((key) => key + 1);
     };
 
     window.addEventListener("pointermove", handlePointerMove);
@@ -40,11 +40,11 @@ export default function App() {
         }}
       >
         <img
-          key={spinKey}
+          key={effectKey}
           src="/monitoring-hat.png"
           alt="Black dad hat embroidered with Monitoring the Situation"
           className={`max-h-[min(40vh,360px)] w-auto select-none object-contain ${
-            spinKey > 0 ? "hat-spin" : ""
+            effectKey > 0 ? "hat-mental" : ""
           }`}
         />
       </div>
